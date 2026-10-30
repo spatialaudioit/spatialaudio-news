@@ -13,6 +13,20 @@
     "last_seen_at": "2026-10-30T08:42:58Z"
   },
   {
+    "id": "290956ab8a3d5bc5a2d4",
+    "title": "2026 Technology & Engineering Emmy® Award for ATSC 3.0",
+    "url": "https://www.audioblog.iis.fraunhofer.com/2026-emmy-atsc",
+    "published_at": "2026-10-16T13:14:21Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Formati e standard",
+    "description": "Over the last 15 years, Fraunhofer IIS has contributed key technologies to this standard, including MPEG-H Audio, Next Generation Audio (NGA) concepts, and related…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
+  },
+  {
     "id": "dacba38d50059d570676",
     "title": "Jack White, John McBride and Vince Gill headline AES Show Nashville 2026",
     "url": "https://aes.org/news/jack-white-john-mcbride-and-vince-gill-headline-aes-show-nashville-2026",
@@ -39,6 +53,20 @@
     "last_seen_at": "2026-10-30T08:42:58Z"
   },
   {
+    "id": "b31cfaffd6fd66834664",
+    "title": "IEM Plugin Suite — v1.16.0",
+    "url": "https://git.iem.at/audioplugins/IEMPluginSuite/-/tags/v1.16.0",
+    "published_at": "2026-09-30T11:50:58Z",
+    "source_id": "iem",
+    "source": "IEM Plugin Suite",
+    "category": "Ambisonics e binaurale",
+    "description": "Included plug-ins AllRA Decoder v0.9.7 Binaural Decoder v0.6.7 Coordinate Converter v1.0.0 Directional Compressor v1.3.7 Directivity Shaper v0.9.0 Distance Compensator v0.3.7 Dual Delay v1.0.1 Energy…",
+    "description_kind": "source_excerpt",
+    "date_kind": "updated",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
+  },
+  {
     "id": "cccdf92050d74999b08b",
     "title": "Marina Bosi to deliver Richard C. Heyser Memorial Lecture at AES Show Nashville 2026",
     "url": "https://aes.org/events/marina-bosi-to-deliver-richard-c-heyser-memorial-lecture-at-aes-show-nashville-2026",
@@ -52,6 +80,20 @@
     "last_seen_at": "2026-10-30T08:42:58Z"
   },
   {
+    "id": "9ea1e54f06b1b53700c9",
+    "title": "SWR/ARD Successfully Tests Next Generation Audio with MPEG-H",
+    "url": "https://www.audioblog.iis.fraunhofer.com/swr-ard-successfully-tests-next-generation-audio-with-mpeg-h",
+    "published_at": "2026-09-04T09:11:27Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Formati e standard",
+    "description": "Integrating immersive and personalized audio into live broadcast workflows at scale: At the SWR3 ESC Party, German public broadcaster Südwestrundfunk (SWR) conducted a real-world…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
+  },
+  {
     "id": "f7c5c3ce748dfa7d1b70",
     "title": "SOFAtoolbox — SOFA Toolbox v2.6.0",
     "url": "https://github.com/sofacoustics/SOFAtoolbox/releases/tag/v2.6.0",
@@ -61,8 +103,9 @@
     "category": "Ambisonics e binaurale",
     "description": "master release v2.6.0",
     "description_kind": "source_excerpt",
+    "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:42:58Z"
+    "last_seen_at": "2026-10-30T08:58:03Z"
   },
   {
     "id": "534d7457f41096ed2c2d",
@@ -76,6 +119,34 @@
     "description_kind": "source_excerpt",
     "first_seen_at": "2026-10-30T08:35:43Z",
     "last_seen_at": "2026-10-30T08:42:58Z"
+  },
+  {
+    "id": "06b11ec1c164e1d52d3f",
+    "title": "ZTE Becomes First to Secure MPEG-H Certification for Set-Top Boxes for Brazil’s DTV+",
+    "url": "https://www.audioblog.iis.fraunhofer.com/zte",
+    "published_at": "2026-08-17T07:55:39Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Formati e standard",
+    "description": "As to Fraunhofer IIS confirmed, ZTE has completed certification for its first MPEG-H Audio-enabled set-top box through the MPEG-H Audio Trademark Program, leading the…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
+  },
+  {
+    "id": "07723fe8805baeaf4de1",
+    "title": "SET Expo 2026: How MPEG-H Audio from Fraunhofer IIS Powers DTV+ in Brazil",
+    "url": "https://www.audioblog.iis.fraunhofer.com/set-expo-2026-how-mpeg-h-audio-from-fraunhofer-iis-powers-dtv-in-brazil",
+    "published_at": "2026-08-12T12:50:15Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Formati e standard",
+    "description": "As the main developer of MPEG-H Audio, Fraunhofer IIS will demonstrate how broadcasters and […]",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
   },
   {
     "id": "9eee740c52284fb4f89f",
@@ -100,8 +171,23 @@
     "category": "Formati e standard",
     "description": "This included promoting one standard to Final Draft of International Standard (FDIS) , one standard to Amendment (AMD) , and three standards to Final…",
     "description_kind": "source_excerpt",
+    "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:42:58Z"
+    "last_seen_at": "2026-10-30T08:58:03Z"
+  },
+  {
+    "id": "ca1039396a5bc40dd97d",
+    "title": "ADM Implementers Group launches to drive industry adoption of object-based audio",
+    "url": "https://tech.ebu.ch/news/2026/adm-implementers-group-launches-to-drive-industry-adoption-of-object-based-audio",
+    "published_at": "2026-05-07T14:10:28Z",
+    "source_id": "ebu",
+    "source": "EBU Technology & Innovation",
+    "category": "Formati e standard",
+    "description": "The ADM Implementers Group (ADM-IG) is a new initiative designed to drive the practical deployment of Audio Definition Model (ADM) and Serial ADM (S-ADM)…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
   },
   {
     "id": "2723d7294a40864acc39",
@@ -113,8 +199,23 @@
     "category": "Formati e standard",
     "description": "Considering the importance of the availability of open-source implementations of the standard, which enables developers to easily test and integrate the technology into their…",
     "description_kind": "source_excerpt",
+    "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:42:58Z"
+    "last_seen_at": "2026-10-30T08:58:03Z"
+  },
+  {
+    "id": "0dbc252d0dd7fdab659d",
+    "title": "SPARTA — v1.8.2",
+    "url": "https://github.com/leomccormack/SPARTA/releases/tag/v1.8.2",
+    "published_at": "2026-01-25T16:34:35Z",
+    "source_id": "sparta",
+    "source": "SPARTA",
+    "category": "Ambisonics e binaurale",
+    "description": "* **MacOS** (12.0+, ARM & x86-64) - [Download Link](https://github.com/leomccormack/SPARTA/releases/download/v1.8.2/MacOS_SPARTA_AAX_2026_01_25_v1.8.2-signed.pkg) If you would like to learn more about the plug-ins included in the SPARTA installer,…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
   },
   {
     "id": "aaa3f97b498c71e36662",
@@ -126,8 +227,23 @@
     "category": "Formati e standard",
     "description": "Overall, MPEG has previously received six Technology & Engineering Emmy® Awards from the National Academy of Television Arts & Sciences (NATAS), and among them…",
     "description_kind": "source_excerpt",
+    "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:42:58Z"
+    "last_seen_at": "2026-10-30T08:58:03Z"
+  },
+  {
+    "id": "3bd7c43047f0c563c48c",
+    "title": "SPARTA — v1.8.1",
+    "url": "https://github.com/leomccormack/SPARTA/releases/tag/v1.8.1",
+    "published_at": "2025-10-04T19:24:39Z",
+    "source_id": "sparta",
+    "source": "SPARTA",
+    "category": "Ambisonics e binaurale",
+    "description": "**Please note** that if you are upgrading from v1.7.1 (or an earlier version), then it is possible that some existing parameter settings, automation data,…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
   },
   {
     "id": "cd1477697705eae2a8c5",
@@ -139,8 +255,23 @@
     "category": "Formati e standard",
     "description": "MPEG Audio Media Authenticity At its 150th and 151st meeting, MPEG Audio Coding (WG 6) advanced Amendments of ISO/IEC 14496-3 (MPEG-4 Audio), ISO/IEC 23003-3…",
     "description_kind": "source_excerpt",
+    "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:42:58Z"
+    "last_seen_at": "2026-10-30T08:58:03Z"
+  },
+  {
+    "id": "25481694989d84228d55",
+    "title": "SPARTA — v1.8.0 (beta)",
+    "url": "https://github.com/leomccormack/SPARTA/releases/tag/v1.8.0",
+    "published_at": "2025-07-13T14:57:11Z",
+    "source_id": "sparta",
+    "source": "SPARTA",
+    "category": "Ambisonics e binaurale",
+    "description": "**Please note** this is a beta release, which includes a rework of how parameters are handled (replacing old deprecated code, with modern JUCE recommendations).…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
   },
   {
     "id": "4ed7226a1b82ce45670f",
@@ -152,8 +283,23 @@
     "category": "Ambisonics e binaurale",
     "description": "At its 150th meeting, MPEG promoted three standards (among others) to Final Draft International Standard (FDIS), driving innovation in immersive audio and video coding:…",
     "description_kind": "source_excerpt",
+    "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:42:58Z"
+    "last_seen_at": "2026-10-30T08:58:03Z"
+  },
+  {
+    "id": "769865a74fe17d450a07",
+    "title": "IEM Plugin Suite — v1.15.0",
+    "url": "https://git.iem.at/audioplugins/IEMPluginSuite/-/tags/v1.15.0",
+    "published_at": "2025-04-10T10:43:21Z",
+    "source_id": "iem",
+    "source": "IEM Plugin Suite",
+    "category": "Ambisonics e binaurale",
+    "description": "Included plug-ins AllRA Decoder v0.9.5 Binaural Decoder v0.6.6 Coordinate Converter v0.4.6 Directional Compressor v1.3.6 Directivity Shaper v0.8.6 Distance Compensator v0.3.6 Dual Delay v1.0.0 Energy…",
+    "description_kind": "source_excerpt",
+    "date_kind": "updated",
+    "first_seen_at": "2026-10-30T08:58:03Z",
+    "last_seen_at": "2026-10-30T08:58:03Z"
   },
   {
     "id": "74aa6891cd1373260475",
@@ -165,7 +311,8 @@
     "category": "Formati e standard",
     "description": "At its 149th meeting, MPEG promoted three standards (among others) to Final Draft International Standard (FDIS), driving innovation in next-generation, immersive audio and video…",
     "description_kind": "source_excerpt",
+    "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:42:58Z"
+    "last_seen_at": "2026-10-30T08:58:03Z"
   }
 ]
