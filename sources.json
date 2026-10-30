@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "max_items": 5,
+  "max_items_per_source": 2,
+  "max_age_days": 730,
+  "description_words": 24,
+  "topics": [
+    {"category": "Ambisonics e binaurale", "patterns": ["ambisonic", "binaural", "hrtf", "head.related transfer", "spatially oriented format", "sofa ?toolbox"]},
+    {"category": "Formati e standard", "patterns": ["mpeg[ -]h", "mpeg[ -]i immersive audio", "iamf", "immersive audio.*standard", "3d audio"]},
+    {"category": "Produzione e ascolto immersivo", "patterns": ["dolby atmos", "spatial audio", "audio spa[tz]ial", "immersive audio", "immersive music", "immersive listening", "wave field synthesis", "head[ -]tracking"]}
+  ],
+  "sources": [
+    {
+      "id": "aes", "name": "Audio Engineering Society", "type": "rss",
+      "url": "https://aes.org/feed/", "homepage": "https://aes.org/",
+      "article_hosts": ["aes.org", "www.aes.org"], "enabled": true,
+      "verified_on": "2026-10-30", "verification": "HTTP 200; RSS 2.0 con pubDate, titolo, link e descrizione."
+    },
+    {
+      "id": "mpeg", "name": "MPEG", "type": "rss",
+      "url": "https://www.mpeg.org/feed/", "homepage": "https://www.mpeg.org/",
+      "article_hosts": ["www.mpeg.org", "mpeg.org"], "enabled": true,
+      "verified_on": "2026-10-30", "verification": "HTTP 200; RSS 2.0 con comunicati ufficiali e date."
+    },
+    {
+      "id": "sofa", "name": "SOFAtoolbox / SOFA Acoustics", "type": "github_releases",
+      "url": "https://api.github.com/repos/sofacoustics/SOFAtoolbox/releases",
+      "homepage": "https://github.com/sofacoustics/SOFAtoolbox",
+      "article_hosts": ["github.com"], "article_path_prefix": "/sofacoustics/SOFAtoolbox/releases/",
+      "context": "SOFAtoolbox spatially oriented format HRTF binaural", "enabled": true,
+      "verified_on": "2026-10-30", "verification": "HTTP 200; API GitHub pubblica senza token, rilascio v2.6.0 con published_at."
+    }
+  ]
+}

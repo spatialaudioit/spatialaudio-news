@@ -1,0 +1,72 @@
+name: News pilot — raccolta e pubblicazione
+on:
+  schedule:
+    - cron: '17 7 * * *'
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['sources.json', 'collect.py', 'test_collect.py', '.github/workflows/news.yml']
+
+permissions: {}
+concurrency:
+  group: news-pilot
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Verifica repository pubblico e test
+        env:
+          IS_PRIVATE: ${{ github.event.repository.private }}
+        run: |
+          test "$IS_PRIVATE" = "false"
+          python3 -m unittest -v test_collect
+      - name: Raccogli da tre fonti pubbliche
+        run: python3 collect.py
+      - name: Conserva dati e cronologia nel repository
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add public/news-pilot.json history/
+          if ! git diff --cached --quiet; then
+            git commit -m 'Aggiorna rassegna pilota e registro delle fonti'
+            git push
+          fi
+      - name: Prepara archivio GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public
+          retention-days: 1
+  deploy:
+    needs: collect
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Pubblica soltanto l’archivio JSON
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Segnala errori delle fonti dopo la pubblicazione dei dati diagnostici
+        env:
+          PAGE_URL: ${{ steps.deployment.outputs.page_url }}
+        run: |
+          python3 - <<'PY'
+          import json, os, time, urllib.request
+          url = os.environ['PAGE_URL'].rstrip('/') + '/news-pilot.json?verify=' + str(time.time_ns())
+          with urllib.request.urlopen(url, timeout=30) as r:
+              data = json.load(r)
+          print('Esecuzione pubblicata:', data['run_id'], 'stato:', data['status'])
+          if data['status'] != 'ok':
+              raise SystemExit('Una o più fonti non rispondono: i dati conservati restano consultabili.')
+          PY
