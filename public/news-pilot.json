@@ -1,9 +1,9 @@
 {
   "schema_version": 1,
   "pilot": true,
-  "run_id": "2026-10-30T08:35:43Z",
-  "checked_at": "2026-10-30T08:35:43Z",
-  "last_success_at": "2026-10-30T08:35:43Z",
+  "run_id": "2026-10-30T08:40:51Z",
+  "checked_at": "2026-10-30T08:40:51Z",
+  "last_success_at": "2026-10-30T08:40:51Z",
   "status": "ok",
   "max_items": 5,
   "total_archived": 13,
@@ -23,7 +23,7 @@
       "received": 10,
       "accepted": 5,
       "rejected": 0,
-      "checked_at": "2026-10-30T08:35:43Z"
+      "checked_at": "2026-10-30T08:40:51Z"
     },
     {
       "id": "mpeg",
@@ -33,9 +33,9 @@
       "http_status": 200,
       "endpoint": "https://www.mpeg.org/feed/",
       "received": 10,
-      "accepted": 7,
+      "accepted": 6,
       "rejected": 0,
-      "checked_at": "2026-10-30T08:35:43Z"
+      "checked_at": "2026-10-30T08:40:51Z"
     },
     {
       "id": "sofa",
@@ -47,7 +47,7 @@
       "received": 1,
       "accepted": 1,
       "rejected": 0,
-      "checked_at": "2026-10-30T08:35:43Z"
+      "checked_at": "2026-10-30T08:40:51Z"
     }
   ],
   "items": [
@@ -58,11 +58,11 @@
       "published_at": "2026-10-22T04:40:47Z",
       "source_id": "aes",
       "source": "Audio Engineering Society",
-      "category": "Ambisonics e binaurale",
+      "category": "Produzione e ascolto immersivo",
       "description": "As concerts and other live performances reach audiences through global streaming platforms, Dolby Atmos® is opening new possibilities for immersive entertainment at home.",
       "description_kind": "source_excerpt",
       "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T08:35:43Z"
+      "last_seen_at": "2026-10-30T08:40:51Z"
     },
     {
       "id": "dacba38d50059d570676",
@@ -75,7 +75,7 @@
       "description": "A METAlliance session will explore artificial intelligence, while “From Stage to Stream: Delivering Live Entertainment in Dolby Atmos” will examine new opportunities to capture…",
       "description_kind": "source_excerpt",
       "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T08:35:43Z"
+      "last_seen_at": "2026-10-30T08:40:51Z"
     },
     {
       "id": "f7c5c3ce748dfa7d1b70",
@@ -88,20 +88,7 @@
       "description": "master release v2.6.0",
       "description_kind": "source_excerpt",
       "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T08:35:43Z"
-    },
-    {
-      "id": "9eee740c52284fb4f89f",
-      "title": "Introduction to ISO/IEC JTC 1/SC 29 Coding of audio, picture, multimedia and hypermedia information: The world of JPEG and MPEG",
-      "url": "https://www.mpeg.org/introduction-to-iso-iec-jtc-1-sc-29-coding-of-audio-picture-multimedia-and-hypermedia-information-the-world-of-jpeg-and-mpeg",
-      "published_at": "2026-07-14T04:55:22Z",
-      "source_id": "mpeg",
-      "source": "MPEG",
-      "category": "Formati e standard",
-      "description": "Sullivan (SC 29 chair) April 2026 Download Scope of ISO/IEC JTC1/SC 29 Standardization in the field of Efficient coding of digital representations of images,…",
-      "description_kind": "source_excerpt",
-      "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T08:35:43Z"
+      "last_seen_at": "2026-10-30T08:40:51Z"
     },
     {
       "id": "14cd363c948af1128685",
@@ -114,7 +101,20 @@
       "description": "This included promoting one standard to Final Draft of International Standard (FDIS) , one standard to Amendment (AMD) , and three standards to Final…",
       "description_kind": "source_excerpt",
       "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T08:35:43Z"
+      "last_seen_at": "2026-10-30T08:40:51Z"
+    },
+    {
+      "id": "2723d7294a40864acc39",
+      "title": "153rd meeting of MPEG",
+      "url": "https://www.mpeg.org/153rd-meeting-of-mpeg",
+      "published_at": "2026-03-02T13:48:17Z",
+      "source_id": "mpeg",
+      "source": "MPEG",
+      "category": "Formati e standard",
+      "description": "Considering the importance of the availability of open-source implementations of the standard, which enables developers to easily test and integrate the technology into their…",
+      "description_kind": "source_excerpt",
+      "first_seen_at": "2026-10-30T08:35:43Z",
+      "last_seen_at": "2026-10-30T08:40:51Z"
     }
   ]
 }
