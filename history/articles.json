@@ -24,7 +24,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "dacba38d50059d570676",
@@ -64,7 +64,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "updated",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "cccdf92050d74999b08b",
@@ -91,7 +91,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "f7c5c3ce748dfa7d1b70",
@@ -105,7 +105,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "534d7457f41096ed2c2d",
@@ -132,7 +132,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "07723fe8805baeaf4de1",
@@ -146,7 +146,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "9eee740c52284fb4f89f",
@@ -162,6 +162,34 @@
     "last_seen_at": "2026-10-30T08:35:43Z"
   },
   {
+    "id": "1ce5226b24c10b641ba9",
+    "title": "Samsung Elevates Next-Generation Audio Experience by Joining MPEG-H Trademark Program for Global Broadcast and Streaming",
+    "url": "https://www.audioblog.iis.fraunhofer.com/samsung-elevates-next-generation-audio-experience-by-joining-mpeg-h-trademark-program",
+    "published_at": "2026-07-10T07:30:23Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Formati e standard",
+    "description": "Samsung, the world’s leading TV manufacturer, has become part of the MPEG-H Trademark Program to enable consistent, interoperable MPEG-H Audio across its TV lineup,…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T09:24:54Z",
+    "last_seen_at": "2026-10-30T09:24:54Z"
+  },
+  {
+    "id": "e385f1696cbb4d85dc1e",
+    "title": "DTV+ Goes Live in Brazil with MPEG H Audio at the Core",
+    "url": "https://www.audioblog.iis.fraunhofer.com/dtv-goes-live-in-brazil-with-mpeg-h-audio-at-the-core",
+    "published_at": "2026-06-15T06:53:08Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Formati e standard",
+    "description": "Brazil moves DTV+ into commercial launch in time for the Soccer World Championship – and brings MPEG‑H Audio to the forefront. The new one-of-a-kind…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T09:24:54Z",
+    "last_seen_at": "2026-10-30T09:24:54Z"
+  },
+  {
     "id": "14cd363c948af1128685",
     "title": "154th meeting of MPEG",
     "url": "https://www.mpeg.org/154th-meeting-of-mpeg",
@@ -173,7 +201,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "ca1039396a5bc40dd97d",
@@ -187,7 +215,35 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
+  },
+  {
+    "id": "a1ce1dd492f5fb9e7aca",
+    "title": "Avid and Fraunhofer IIS Bring MPEG-H Audio into Pro Tools",
+    "url": "https://www.audioblog.iis.fraunhofer.com/avid-and-fraunhofer-iis-bring-mpeg-h-audio-into-pro-tools",
+    "published_at": "2026-04-30T13:01:32Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Formati e standard",
+    "description": "Avid today announced native support for MPEG-H Audio in Pro Tools Studio and Pro Tools Ultimate, available with the Pro Tools 2026.4 release.",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T09:24:54Z",
+    "last_seen_at": "2026-10-30T09:24:54Z"
+  },
+  {
+    "id": "bbd6f1f1c04a913426b5",
+    "title": "Telestream Integrates MPEG-H Audio to Streamline Media Delivery Ahead of Brazil’s DTV+ Rollout",
+    "url": "https://www.audioblog.iis.fraunhofer.com/telestream-integrates-mpeg-h-audio-to-streamline-media-delivery-ahead-of-brazils-dtv-rollout",
+    "published_at": "2026-04-08T13:00:46Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Formati e standard",
+    "description": "Telestream and Fraunhofer IIS are excited to announce the integration of MPEG-H Audio into Telestream’s Vantage media processing platform, supporting broadcasters and content providers…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T09:24:54Z",
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "2723d7294a40864acc39",
@@ -201,7 +257,21 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
+  },
+  {
+    "id": "3f62289a0860335a0187",
+    "title": "Fraunhofer IIS, Airoha, and Cywee Motion Showcase Next-Generation Multi-Channel Spatial Audio at MWC 2026",
+    "url": "https://www.audioblog.iis.fraunhofer.com/airoha",
+    "published_at": "2026-03-02T08:41:58Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Produzione e ascolto immersivo",
+    "description": "Fraunhofer IIS and Airoha Technology are presenting a breakthrough multi-channel spatial audio solution for next-generation wireless headsets at Mobile World Congress (MWC) 2026.",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T09:24:54Z",
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "0dbc252d0dd7fdab659d",
@@ -215,7 +285,21 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
+  },
+  {
+    "id": "ac5984c49f43a4da17f9",
+    "title": "MPEG-H Audio and the Future of Brazilian Broadcasting: A New Chapter Begins",
+    "url": "https://www.audioblog.iis.fraunhofer.com/dtv_decree",
+    "published_at": "2025-10-23T09:53:42Z",
+    "source_id": "fraunhofer",
+    "source": "Fraunhofer IIS Audio Blog",
+    "category": "Formati e standard",
+    "description": "On August 27, 2025, Brazil took a decisive step into the future of television. In a landmark move, President Luiz Inácio Lula da Silva…",
+    "description_kind": "source_excerpt",
+    "date_kind": "published",
+    "first_seen_at": "2026-10-30T09:24:54Z",
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "aaa3f97b498c71e36662",
@@ -229,7 +313,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "3bd7c43047f0c563c48c",
@@ -243,7 +327,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "cd1477697705eae2a8c5",
@@ -257,7 +341,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "25481694989d84228d55",
@@ -271,7 +355,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "4ed7226a1b82ce45670f",
@@ -285,7 +369,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "769865a74fe17d450a07",
@@ -299,7 +383,7 @@
     "description_kind": "source_excerpt",
     "date_kind": "updated",
     "first_seen_at": "2026-10-30T08:58:03Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   },
   {
     "id": "74aa6891cd1373260475",
@@ -313,6 +397,6 @@
     "description_kind": "source_excerpt",
     "date_kind": "published",
     "first_seen_at": "2026-10-30T08:35:43Z",
-    "last_seen_at": "2026-10-30T08:58:03Z"
+    "last_seen_at": "2026-10-30T09:24:54Z"
   }
 ]
