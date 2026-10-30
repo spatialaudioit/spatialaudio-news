@@ -16,6 +16,7 @@ class CollectorTests(unittest.TestCase):
         self.config = json.loads((ROOT / "sources.json").read_text())
         fixtures = {s['id']: s for s in self.config['sources']}
         self.config['sources'] = [{**fixtures[sid], 'enabled': True} for sid in ['aes', 'mpeg', 'sofa']]
+        self.config.update(max_items=5, max_items_per_source=2)
         self.source = self.config["sources"][0]
         self.now = datetime(2026, 10, 30, 8, tzinfo=timezone.utc)
         self.item = {"title": "Spatial audio", "url": "https://aes.org/news/test/?utm_source=x#top",
@@ -59,6 +60,19 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(len(c.release_items(json.dumps(data).encode())), 1)
         with self.assertRaises(ValueError): c.rss_items(b'<!DOCTYPE x><rss/>')
 
+    def test_twenty_news_with_source_limit_and_dedup(self):
+        from urllib.parse import urlsplit
+        config = {**self.config, 'max_items': 20, 'max_items_per_source': 8}
+        records = []
+        for i in range(30):
+            source = config['sources'][i // 10]
+            url = 'https://' + urlsplit(source['homepage']).hostname + source.get('article_path_prefix', '/news/') + str(i)
+            records.append(c.normalize({**self.item, 'url': url}, source, config, self.now))
+        selected = c.select(c.merge([], records + records), config, self.now)
+        self.assertEqual(len(selected), 20)
+        self.assertEqual(len({x['url'] for x in selected}), 20)
+        self.assertTrue(all(sum(x['source_id'] == s['id'] for x in selected) <= 8 for s in config['sources']))
+
     def test_headline_category_precedes_body_and_overviews_are_excluded(self):
         item = {**self.item, "title": "Dolby Atmos announcement", "search_text": "A panel also covers binaural audio."}
         self.assertEqual(c.normalize(item, self.source, self.config, self.now)["category"], "Produzione e ascolto immersivo")
@@ -84,7 +98,7 @@ class CollectorTests(unittest.TestCase):
             with patch.object(c, "fetch", side_effect=lambda s: ([], {"id": s["id"], "name": s["name"], "status": "error"})):
                 c.collect(config_path, output)
             self.assertEqual(json.loads((output / "history/articles.json").read_text()), initial)
-            self.assertEqual(json.loads((output / "public/news-pilot.json").read_text())["status"], "error")
+            self.assertEqual(json.loads((output / "public/news.json").read_text())["status"], "error")
 
 
 if __name__ == "__main__": unittest.main()

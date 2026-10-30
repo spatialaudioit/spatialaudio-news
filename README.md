@@ -1,13 +1,12 @@
 # Spatialaudio.it — Rassegna automatica
 
-Raccolta gratuita da RSS, Atom e API pubbliche → GitHub Actions → archivio JSON su GitHub Pages → Spatialaudio.it. Nessuna API AI, chiave commerciale, carta di credito o abbonamento aggiuntivo. Il nome del repository e del file JSON conservano “pilot” per compatibilità; la stessa architettura alimenta ora la sezione News e approfondimenti e le tre segnalazioni della homepage.
+Raccolta gratuita da RSS, Atom e API pubbliche → GitHub Actions → archivio JSON su GitHub Pages → Spatialaudio.it. Nessuna API AI, chiave commerciale, carta di credito o abbonamento aggiuntivo. La stessa architettura alimenta la sezione News e approfondimenti e le tre segnalazioni della homepage.
 
 ## Collegamenti
 
 - Sezione: https://spatialaudio-italia.aiaiaigod.chatgpt.site/news/
-- Pagina di prova conservata: https://spatialaudio-italia.aiaiaigod.chatgpt.site/news-test/
-- JSON: https://spatialaudioit.github.io/spatialaudio-news-pilot/news-pilot.json
-- Esecuzioni e avvio manuale: https://github.com/spatialaudioit/spatialaudio-news-pilot/actions
+- JSON: https://spatialaudioit.github.io/spatialaudio-news/news.json
+- Esecuzioni e avvio manuale: https://github.com/spatialaudioit/spatialaudio-news/actions
 
 La condivisione di Sites resta quella preesistente: il JSON è pubblico, il portale mantiene l’accesso proprietario. Questa integrazione non rende automaticamente pubblico tutto il sito.
 
@@ -29,7 +28,7 @@ URL, domini ammessi, priorità, argomenti, note di verifica e interruttore enabl
 
 ## Pianificazione e avvio manuale
 
-Workflow .github/workflows/news.yml: una raccolta al giorno alle **08:47 UTC** (09:47 a Roma in inverno, 10:47 in estate), oltre all’avvio manuale e alle modifiche a codice/configurazione. In GitHub: **Actions → News pilot — raccolta e pubblicazione → Run workflow → main → Run workflow**. Il computer e Codex possono essere spenti.
+Workflow .github/workflows/news.yml: una raccolta al giorno alle **08:47 UTC** (09:47 a Roma in inverno, 10:47 in estate), oltre all’avvio manuale e alle modifiche a codice/configurazione. In GitHub: **Actions → News — raccolta e pubblicazione → Run workflow → main → Run workflow**. Il computer e Codex possono essere spenti.
 
 Pages: Settings → Pages → Build and deployment → Source: GitHub Actions. Solo runner standard ubuntu-latest su repository pubblico. Il workflow si interrompe se il repository risulta privato. Usa il GITHUB_TOKEN temporaneo fornito da Actions; nessun secret commerciale. Permessi limitati alla scrittura dei dati nel job di raccolta e alla pubblicazione Pages nel job di deploy. Due job, timeout massimo di cinque minuti per ciascuno; nessun servizio residente.
 
@@ -37,7 +36,7 @@ La pianificazione può essere ritardata o saltata. GitHub disabilita le pianific
 
 ## Criteri editoriali e date
 
-Massimo cinque segnalazioni, ordinate per data, non più di due per fonte. La finestra è di 730 giorni per includere anche comunicati tecnici poco frequenti; non si presentano tutte le voci come notizie di oggi. La data originale resta distinta dal controllo quotidiano. Per Atom si usa published, oppure updated con etichetta esplicita. Il feed ITU riguarda aggiornamenti di catalogo: non se ne deduce la data di approvazione della raccomandazione. Date mancanti, senza fuso, future o troppo vecchie vengono scartate. Se ci sono meno di cinque risultati pertinenti, si mostrano meno risultati.
+Massimo venti segnalazioni, ordinate per data, non più di otto per fonte. La finestra è di 730 giorni per includere anche comunicati tecnici poco frequenti; non si presentano tutte le voci come notizie di oggi. La data originale resta distinta dal controllo quotidiano. Per Atom si usa published, oppure updated con etichetta esplicita. Il feed ITU riguarda aggiornamenti di catalogo: non se ne deduce la data di approvazione della raccomandazione. Date mancanti, senza fuso, future o troppo vecchie vengono scartate. Se ci sono meno di venti risultati pertinenti, si mostrano meno risultati.
 
 I filtri topics sono espressioni esplicite su titoli e contenuti dei feed; il titolo ha precedenza nella categoria. Non si usano “spatial” o “immersive” da sole. Context è ammesso solo per progetti interamente pertinenti come IEM, SPARTA e SOFA. Si escludono le presentazioni introduttive MPEG dai risultati. La selezione automatica può includere comunicati con più argomenti: non equivale a una revisione editoriale umana.
 
@@ -47,7 +46,7 @@ Titoli ed estratti (massimo 24 parole per voce) conservano la lingua originale; 
 
 URL HTTPS canonici: frammenti e parametri di tracciamento rimossi, slash finale normalizzato, ID stabile da hash. ITU può aggiornare a HTTPS gli URL HTTP solo sul proprio dominio autorizzato. Si conservano prima e ultima osservazione. Articoli distinti sullo stesso evento, o traduzioni con URL diversi, non vengono fusi automaticamente.
 
-- public/news-pilot.json: cinque voci al massimo, diagnostica, catalogo delle fonti e timestamp.
+- public/news.json: venti voci al massimo, diagnostica, catalogo delle fonti e timestamp.
 - history/articles.json: tutte le voci pertinenti già osservate, anche se non selezionate o con fonte poi disabilitata.
 - history/runs.json: ultime 400 esecuzioni; Git conserva le versioni precedenti.
 

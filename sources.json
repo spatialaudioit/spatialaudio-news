@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "max_items": 5,
-  "max_items_per_source": 2,
+  "max_items": 20,
+  "max_items_per_source": 8,
   "max_age_days": 730,
   "description_words": 24,
   "topics": [
@@ -93,7 +93,11 @@
       "priority": "Alta",
       "monitor": "MPEG-H, codec e ricerca audio",
       "verified_on": "2026-10-30",
-      "verification": "HTTP 200, RSS 2.0 con comunicati audio e pubDate."
+      "verification": "HTTP 200, RSS 2.0 con comunicati audio e pubDate.",
+      "additional_urls": [
+        "https://www.audioblog.iis.fraunhofer.com/feed/?paged=2",
+        "https://www.audioblog.iis.fraunhofer.com/feed/?paged=3"
+      ]
     },
     {
       "id": "itu",

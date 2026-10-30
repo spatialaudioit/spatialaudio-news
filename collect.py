@@ -107,9 +107,17 @@ def atom_items(raw):
 
 
 def fetch(source):
+    if source.get('additional_urls'):
+        base = {k: v for k, v in source.items() if k != 'additional_urls'}
+        results = [fetch({**base, 'url': url}) for url in [source['url'], *source['additional_urls']]]
+        items = [item for records, _ in results for item in records]
+        errors = [status.get('error', 'Canale non disponibile') for _, status in results if status['status'] != 'ok']
+        return items, {'id': source['id'], 'name': source['name'], 'url': source['url'],
+                       'status': 'error' if errors else 'ok', 'received': len(items),
+                       'pages': len(results), **({'error': '; '.join(errors)[:200]} if errors else {})}
     canonical_url(source["url"])
     request = Request(source["url"], headers={
-        "User-Agent": "SpatialaudioNewsPilot/1.0 (+https://github.com/spatialaudioit/spatialaudio-news-pilot)",
+        "User-Agent": "SpatialaudioNews/1.0 (+https://github.com/spatialaudioit/spatialaudio-news)",
         "Accept": "*/*"})
     for attempt in range(3):
         try:
@@ -135,8 +143,10 @@ def fetch(source):
                            "status": "ok", "http_status": 200, "endpoint": endpoint, "received": len(items)}
         except Exception as error:
             if attempt == 2:
+                detail = ('curl exit ' + str(error.returncode) + ': ' + error.stderr.decode(errors='replace')[:180]
+                          if isinstance(error, subprocess.CalledProcessError) else type(error).__name__ + ': ' + str(error)[:200])
                 return [], {"id": source["id"], "name": source["name"], "url": source["url"],
-                            "status": "error", "error": type(error).__name__ + ": " + str(error)[:200], "received": 0}
+                            "status": "error", "error": detail, "received": 0}
             time.sleep(attempt + 1)
 
 
@@ -211,11 +221,11 @@ def atomic_json(path, data):
 
 def collect(config_path, output_root):
     config = json.loads(config_path.read_text(encoding="utf-8"))
-    if not 1 <= config["max_items"] <= 5: raise ValueError("Il pilota ammette da 1 a 5 notizie")
+    if not 1 <= config["max_items"] <= 20: raise ValueError("La rassegna ammette da 1 a 20 notizie")
     now = datetime.now(UTC); stamp = iso(now)
     archive_path = output_root / "history/articles.json"
     records = json.loads(archive_path.read_text()) if archive_path.exists() else []
-    old_path = output_root / "public/news-pilot.json"
+    old_path = output_root / "public/news.json"
     old = json.loads(old_path.read_text()) if old_path.exists() else {}
     sources = [s for s in config["sources"] if s.get("enabled", True)]
     if not sources or len({s["id"] for s in sources}) != len(sources): raise ValueError("Fonti mancanti o ID duplicati")
@@ -238,7 +248,7 @@ def collect(config_path, output_root):
     success = sum(s["status"] == "ok" for s in diagnostics)
     status = "ok" if success == len(sources) else "partial" if success else "error"
     selected = select(merged, config, now)
-    payload = {"schema_version": 1, "pilot": True, "run_id": stamp,
+    payload = {"schema_version": 1, "kind": "spatialaudio-news", "run_id": stamp,
                "checked_at": stamp, "last_success_at": stamp if success else old.get("last_success_at"),
                "status": status, "max_items": config["max_items"], "total_archived": len(merged),
                "policy": {"max_age_days": config["max_age_days"], "max_items_per_source": config["max_items_per_source"],
