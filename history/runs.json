@@ -1,0 +1,46 @@
+[
+  {
+    "run_id": "2026-10-30T08:35:43Z",
+    "status": "ok",
+    "selected": 5,
+    "archived": 13,
+    "sources": [
+      {
+        "id": "aes",
+        "name": "Audio Engineering Society",
+        "url": "https://aes.org/feed/",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://aes.org/feed/",
+        "received": 10,
+        "accepted": 5,
+        "rejected": 0,
+        "checked_at": "2026-10-30T08:35:43Z"
+      },
+      {
+        "id": "mpeg",
+        "name": "MPEG",
+        "url": "https://www.mpeg.org/feed/",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://www.mpeg.org/feed/",
+        "received": 10,
+        "accepted": 7,
+        "rejected": 0,
+        "checked_at": "2026-10-30T08:35:43Z"
+      },
+      {
+        "id": "sofa",
+        "name": "SOFAtoolbox / SOFA Acoustics",
+        "url": "https://api.github.com/repos/sofacoustics/SOFAtoolbox/releases",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://api.github.com/repos/sofacoustics/SOFAtoolbox/releases",
+        "received": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "checked_at": "2026-10-30T08:35:43Z"
+      }
+    ]
+  }
+]
