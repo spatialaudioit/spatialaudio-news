@@ -14,6 +14,8 @@ c = importlib.util.module_from_spec(spec); spec.loader.exec_module(c)
 class CollectorTests(unittest.TestCase):
     def setUp(self):
         self.config = json.loads((ROOT / "sources.json").read_text())
+        fixtures = {s['id']: s for s in self.config['sources']}
+        self.config['sources'] = [{**fixtures[sid], 'enabled': True} for sid in ['aes', 'mpeg', 'sofa']]
         self.source = self.config["sources"][0]
         self.now = datetime(2026, 10, 30, 8, tzinfo=timezone.utc)
         self.item = {"title": "Spatial audio", "url": "https://aes.org/news/test/?utm_source=x#top",
@@ -64,14 +66,23 @@ class CollectorTests(unittest.TestCase):
         item = {**self.item, "url": "https://www.mpeg.org/overview", "title": "Introduction to ISO/IEC", "search_text": "MPEG-I immersive audio"}
         self.assertIsNone(c.normalize(item, mpeg, self.config, self.now))
 
+    def test_atom_update_is_distinct_from_publication(self):
+        raw = b'<feed xmlns="http://www.w3.org/2005/Atom"><entry><title>v1</title><updated>2026-09-30T13:50:58+02:00</updated><link href="https://git.iem.at/audioplugins/IEMPluginSuite/-/tags/v1"/><content type="html">Binaural decoder</content></entry></feed>'
+        item = c.atom_items(raw)[0]
+        self.assertEqual(item['date_kind'], 'updated')
+        self.assertEqual(item['date'], '2026-09-30T13:50:58+02:00')
+
     def test_total_source_failure_preserves_archive_and_reports_stale(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)
+            config_path = output / 'sources.json'
+            config_path.write_text(json.dumps(self.config))
             with patch.object(c, "fetch", side_effect=lambda s: ([self.item], {"id": s["id"], "name": s["name"], "status": "ok"})):
-                c.collect(ROOT / "sources.json", output)
+                c.collect(config_path, output)
             initial = json.loads((output / "history/articles.json").read_text())
+            self.assertEqual(len(initial), 1)
             with patch.object(c, "fetch", side_effect=lambda s: ([], {"id": s["id"], "name": s["name"], "status": "error"})):
-                c.collect(ROOT / "sources.json", output)
+                c.collect(config_path, output)
             self.assertEqual(json.loads((output / "history/articles.json").read_text()), initial)
             self.assertEqual(json.loads((output / "public/news-pilot.json").read_text())["status"], "error")
 

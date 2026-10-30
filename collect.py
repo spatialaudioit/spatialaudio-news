@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 import re
 import sys
+import subprocess
 import time
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 from urllib.request import Request, urlopen
@@ -82,26 +83,53 @@ def rss_items(raw):
 def release_items(raw):
     data = json.loads(raw)
     if not isinstance(data, list): raise ValueError("Elenco dei rilasci atteso")
-    return [{"title": "SOFAtoolbox — " + (x.get("name") or x["tag_name"]),
+    return [{"title": (x.get("name") or x["tag_name"]),
              "url": x["html_url"], "date": x.get("published_at"),
              "description": plain(x.get("body")), "search_text": plain(x.get("body"))}
             for x in data if not x.get("draft") and not x.get("prerelease")]
+
+
+def atom_items(raw):
+    if b"<!DOCTYPE" in raw.upper() or b"<!ENTITY" in raw.upper(): raise ValueError("Dichiarazioni XML non ammesse")
+    root = ET.fromstring(raw); ns = {"a": "http://www.w3.org/2005/Atom"}
+    if root.tag != "{http://www.w3.org/2005/Atom}feed": raise ValueError("Feed Atom atteso")
+    result = []
+    for item in root.findall("a:entry", ns):
+        link = next((x.get("href") for x in item.findall("a:link", ns) if x.get("rel", "alternate") == "alternate"), None)
+        content = plain(item.findtext("a:content", default="", namespaces=ns))
+        summary = plain(item.findtext("a:summary", default="", namespaces=ns))
+        published = item.findtext("a:published", namespaces=ns)
+        result.append({"title": plain(item.findtext("a:title", namespaces=ns)), "url": link,
+                       "date": published or item.findtext("a:updated", namespaces=ns),
+                       "date_kind": "published" if published else "updated",
+                       "description": summary or content, "search_text": summary + " " + content})
+    return result
 
 
 def fetch(source):
     canonical_url(source["url"])
     request = Request(source["url"], headers={
         "User-Agent": "SpatialaudioNewsPilot/1.0 (+https://github.com/spatialaudioit/spatialaudio-news-pilot)",
-        "Accept": "application/rss+xml, application/xml, application/json;q=0.9"})
+        "Accept": "*/*"})
     for attempt in range(3):
         try:
-            with urlopen(request, timeout=15) as response:
-                if response.status != 200: raise ValueError("HTTP " + str(response.status))
-                raw = response.read(MAX_BYTES + 1)
-                if len(raw) > MAX_BYTES: raise ValueError("Fonte troppo grande")
-                endpoint = response.url
-            parser = {"rss": rss_items, "github_releases": release_items}[source["type"]]
+            if source.get('transport') == 'curl':
+                response = subprocess.run(['curl','--fail','--location','--silent','--show-error',
+                                           '--max-time','15','--max-filesize',str(MAX_BYTES),
+                                           '--proto','=https','--proto-redir','=https',
+                                           '--user-agent',request.get_header('User-agent'),source['url']],
+                                          capture_output=True, check=True, timeout=20)
+                raw = response.stdout; endpoint = source['url']
+            else:
+                with urlopen(request, timeout=15) as response:
+                    if response.status != 200: raise ValueError("HTTP " + str(response.status))
+                    raw = response.read(MAX_BYTES + 1)
+                    endpoint = response.url
+            if len(raw) > MAX_BYTES: raise ValueError("Fonte troppo grande")
+            parser = {"rss": rss_items, "atom": atom_items, "github_releases": release_items}[source["type"]]
             items = parser(raw)
+            if source.get("title_prefix"):
+                for item in items: item["title"] = source["title_prefix"] + " — " + item["title"]
             if not items: raise ValueError("Fonte vuota o formato cambiato")
             return items, {"id": source["id"], "name": source["name"], "url": source["url"],
                            "status": "ok", "http_status": 200, "endpoint": endpoint, "received": len(items)}
@@ -116,7 +144,10 @@ def normalize(item, source, config, now):
     published = parse_date(item.get("date"))
     if published > now: raise ValueError("Data futura")
     if published < now - timedelta(days=config["max_age_days"]): raise ValueError("Fuori finestra temporale")
-    url = canonical_url(item.get("url"))
+    original_url = item.get("url") or ""
+    if source.get("upgrade_http_links") and original_url.startswith("http://") and urlsplit(original_url).hostname in source["article_hosts"]:
+        original_url = "https://" + original_url[7:]
+    url = canonical_url(original_url)
     u = urlsplit(url)
     if u.hostname not in source["article_hosts"]: raise ValueError("Dominio originale non autorizzato")
     if not u.path.startswith(source.get("article_path_prefix", "/")): raise ValueError("Percorso non autorizzato")
@@ -144,6 +175,7 @@ def normalize(item, source, config, now):
     return {"id": sha256(url.encode()).hexdigest()[:20], "title": title[:300], "url": url,
             "published_at": iso(published), "source_id": source["id"], "source": source["name"],
             "category": category, "description": description, "description_kind": "source_excerpt",
+            "date_kind": item.get("date_kind", source.get("date_kind", "published")),
             "first_seen_at": iso(now), "last_seen_at": iso(now)}
 
 
@@ -197,6 +229,11 @@ def collect(config_path, output_root):
                     if record: incoming.append(record); accepted += 1
                 except (ValueError, TypeError, KeyError, OverflowError): rejected += 1
             diagnostics.append({**status, "accepted": accepted, "rejected": rejected, "checked_at": stamp})
+            dates = []
+            for item in items:
+                try: dates.append(parse_date(item.get("date")))
+                except (ValueError, TypeError, OverflowError): pass
+            diagnostics[-1]["latest_entry_at"] = iso(max(dates)) if dates else None
     merged = merge(records, incoming)
     success = sum(s["status"] == "ok" for s in diagnostics)
     status = "ok" if success == len(sources) else "partial" if success else "error"
@@ -207,6 +244,14 @@ def collect(config_path, output_root):
                "policy": {"max_age_days": config["max_age_days"], "max_items_per_source": config["max_items_per_source"],
                           "descriptions": "Brevi estratti delle fonti, in lingua originale; nessuna sintesi AI."},
                "sources": diagnostics, "items": selected}
+    states = {x["id"]: x for x in diagnostics}
+    payload["source_catalog"] = [{"id": s["id"], "name": s["name"], "homepage": s["homepage"],
+                                  "priority": s.get("priority", "Media"), "topics": s.get("monitor", "Audio spaziale"),
+                                  "enabled": s.get("enabled", True), "note": s.get("note", ""),
+                                  "status": states.get(s["id"], {}).get("status", "disabled"),
+                                  "accepted": states.get(s["id"], {}).get("accepted", 0),
+                                  "latest_entry_at": states.get(s["id"], {}).get("latest_entry_at")}
+                                 for s in config["sources"]]
     if not selected and not success and old.get("items"): payload["items"] = old["items"]
     atomic_json(archive_path, merged)
     atomic_json(old_path, payload)

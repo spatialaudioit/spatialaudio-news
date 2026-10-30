@@ -5,31 +5,205 @@
   "max_age_days": 730,
   "description_words": 24,
   "topics": [
-    {"category": "Ambisonics e binaurale", "patterns": ["ambisonic", "binaural", "hrtf", "head.related transfer", "spatially oriented format", "sofa ?toolbox"]},
-    {"category": "Formati e standard", "patterns": ["mpeg[ -]h", "mpeg[ -]i immersive audio", "iamf", "immersive audio.*standard", "3d audio"]},
-    {"category": "Produzione e ascolto immersivo", "patterns": ["dolby atmos", "spatial audio", "audio spa[tz]ial", "immersive audio", "immersive music", "immersive listening", "wave field synthesis", "head[ -]tracking"]}
+    {
+      "category": "Ambisonics e binaurale",
+      "patterns": [
+        "ambisonic",
+        "binaural",
+        "hrtf",
+        "head.related transfer",
+        "spatially oriented format",
+        "sofa ?toolbox"
+      ]
+    },
+    {
+      "category": "Formati e standard",
+      "patterns": [
+        "mpeg[ -]h",
+        "mpeg[ -]i immersive audio",
+        "iamf",
+        "immersive audio.*standard",
+        "3d audio",
+        "audio definition model",
+        "object.based audio",
+        "next generation audio",
+        "BS[.]2051",
+        "advanced sound system",
+        "multichannel stereophonic"
+      ]
+    },
+    {
+      "category": "Produzione e ascolto immersivo",
+      "patterns": [
+        "dolby atmos",
+        "spatial audio",
+        "audio spa[tz]ial",
+        "immersive audio",
+        "immersive music",
+        "immersive listening",
+        "wave field synthesis",
+        "head[ -]tracking"
+      ]
+    }
   ],
   "sources": [
     {
-      "id": "aes", "name": "Audio Engineering Society", "type": "rss",
-      "url": "https://aes.org/feed/", "homepage": "https://aes.org/",
-      "article_hosts": ["aes.org", "www.aes.org"], "enabled": true,
-      "verified_on": "2026-10-30", "verification": "HTTP 200; RSS 2.0 con pubDate, titolo, link e descrizione."
+      "id": "aes",
+      "name": "Audio Engineering Society",
+      "type": "rss",
+      "url": "https://aes.org/feed/",
+      "homepage": "https://aes.org/",
+      "article_hosts": [
+        "aes.org",
+        "www.aes.org"
+      ],
+      "enabled": false,
+      "verified_on": "2026-10-30",
+      "verification": "HTTP 200; RSS 2.0 con pubDate, titolo, link e descrizione.",
+      "priority": "Alta",
+      "monitor": "Ricerca, conferenze, pubblicazioni e standard",
+      "note": "Disattivata su richiesta: gli articoli possono richiedere una verifica anti-bot; il feed era accessibile."
     },
     {
-      "id": "mpeg", "name": "MPEG", "type": "rss",
-      "url": "https://www.mpeg.org/feed/", "homepage": "https://www.mpeg.org/",
-      "exclude_title_patterns": ["^Introduction to ISO/IEC"],
-      "article_hosts": ["www.mpeg.org", "mpeg.org"], "enabled": true,
-      "verified_on": "2026-10-30", "verification": "HTTP 200; RSS 2.0 con comunicati ufficiali e date."
+      "id": "ebu",
+      "name": "EBU Technology & Innovation",
+      "type": "rss",
+      "url": "https://tech.ebu.ch/home/news/maincontent/news-list.rss",
+      "homepage": "https://tech.ebu.ch/",
+      "article_hosts": [
+        "tech.ebu.ch"
+      ],
+      "enabled": true,
+      "priority": "Alta",
+      "monitor": "Broadcast, Next Generation Audio e standard",
+      "verified_on": "2026-10-30",
+      "verification": "RSS 2.0 ufficiale indicato dalla pagina News; risposta HTTP 200."
     },
     {
-      "id": "sofa", "name": "SOFAtoolbox / SOFA Acoustics", "type": "github_releases",
+      "id": "fraunhofer",
+      "name": "Fraunhofer IIS Audio Blog",
+      "type": "rss",
+      "url": "https://www.audioblog.iis.fraunhofer.com/feed/",
+      "homepage": "https://www.audioblog.iis.fraunhofer.com/",
+      "article_hosts": [
+        "www.audioblog.iis.fraunhofer.com",
+        "audioblog.iis.fraunhofer.com"
+      ],
+      "enabled": true,
+      "priority": "Alta",
+      "monitor": "MPEG-H, codec e ricerca audio",
+      "verified_on": "2026-10-30",
+      "verification": "HTTP 200, RSS 2.0 con comunicati audio e pubDate."
+    },
+    {
+      "id": "itu",
+      "name": "ITU-R",
+      "type": "rss",
+      "url": "https://www.itu.int/dms_pages/itu-r/rec/bs/R-REC-BS-RSS.xml",
+      "homepage": "https://www.itu.int/rec/R-REC-BS/en",
+      "article_hosts": [
+        "www.itu.int",
+        "itu.int"
+      ],
+      "upgrade_http_links": true,
+      "enabled": true,
+      "priority": "Alta",
+      "monitor": "Raccomandazioni tecniche e aggiornamenti",
+      "date_kind": "updated",
+      "note": "Il feed ufficiale verificato contiene voci del 2023: non garantisce la copertura degli aggiornamenti più recenti. Consultare anche il catalogo ITU-R.",
+      "verified_on": "2026-10-30",
+      "verification": "HTTP 200; RSS ufficiale collegato dalla serie BS, ma ultima voce del feed risalente al 2023."
+    },
+    {
+      "id": "dolby",
+      "name": "Dolby Professional",
+      "type": "atom",
+      "url": "https://news.dolby.com/en-WW/press_releases.atom",
+      "homepage": "https://professional.dolby.com/",
+      "article_hosts": [
+        "news.dolby.com"
+      ],
+      "enabled": true,
+      "priority": "Media",
+      "monitor": "Dolby Atmos, produzione immersiva e strumenti",
+      "verified_on": "2026-10-30",
+      "verification": "Atom ufficiale collegato dalla newsroom Dolby, raggiungibile senza account.",
+      "transport": "curl"
+    },
+    {
+      "id": "iem",
+      "name": "IEM Plugin Suite",
+      "type": "atom",
+      "url": "https://git.iem.at/audioplugins/IEMPluginSuite/-/tags?format=atom",
+      "homepage": "https://plugins.iem.at/",
+      "article_hosts": [
+        "git.iem.at"
+      ],
+      "article_path_prefix": "/audioplugins/IEMPluginSuite/-/tags/",
+      "title_prefix": "IEM Plugin Suite",
+      "context": "Ambisonics binaural audio plugins",
+      "enabled": true,
+      "priority": "Media",
+      "monitor": "Plugin Ambisonics e strumenti di ricerca",
+      "note": "Il feed dei tag riporta la data di aggiornamento; viene distinta dalla pubblicazione.",
+      "verified_on": "2026-10-30",
+      "verification": "HTTP 200; Atom ufficiale GitLab IEM con tag e date aggiornamento."
+    },
+    {
+      "id": "sparta",
+      "name": "SPARTA",
+      "type": "github_releases",
+      "url": "https://api.github.com/repos/leomccormack/SPARTA/releases",
+      "homepage": "https://github.com/leomccormack/SPARTA",
+      "article_hosts": [
+        "github.com"
+      ],
+      "article_path_prefix": "/leomccormack/SPARTA/releases/",
+      "title_prefix": "SPARTA",
+      "context": "spatial audio Ambisonics binaural audio plugins",
+      "enabled": true,
+      "priority": "Media",
+      "monitor": "Aggiornamenti software open source",
+      "verified_on": "2026-10-30",
+      "verification": "API GitHub pubblica senza token; rilasci con published_at."
+    },
+    {
+      "id": "mpeg",
+      "name": "MPEG",
+      "type": "rss",
+      "url": "https://www.mpeg.org/feed/",
+      "homepage": "https://www.mpeg.org/",
+      "exclude_title_patterns": [
+        "^Introduction to ISO/IEC"
+      ],
+      "article_hosts": [
+        "www.mpeg.org",
+        "mpeg.org"
+      ],
+      "enabled": true,
+      "verified_on": "2026-10-30",
+      "verification": "HTTP 200; RSS 2.0 con comunicati ufficiali e date.",
+      "priority": "Alta",
+      "monitor": "Standard MPEG e audio immersivo",
+      "title_prefix": ""
+    },
+    {
+      "id": "sofa",
+      "name": "SOFAtoolbox / SOFA Acoustics",
+      "type": "github_releases",
       "url": "https://api.github.com/repos/sofacoustics/SOFAtoolbox/releases",
       "homepage": "https://github.com/sofacoustics/SOFAtoolbox",
-      "article_hosts": ["github.com"], "article_path_prefix": "/sofacoustics/SOFAtoolbox/releases/",
-      "context": "SOFAtoolbox spatially oriented format HRTF binaural", "enabled": true,
-      "verified_on": "2026-10-30", "verification": "HTTP 200; API GitHub pubblica senza token, rilascio v2.6.0 con published_at."
+      "article_hosts": [
+        "github.com"
+      ],
+      "article_path_prefix": "/sofacoustics/SOFAtoolbox/releases/",
+      "context": "SOFAtoolbox spatially oriented format HRTF binaural",
+      "enabled": true,
+      "verified_on": "2026-10-30",
+      "verification": "HTTP 200; API GitHub pubblica senza token, rilascio v2.6.0 con published_at.",
+      "priority": "Media",
+      "monitor": "Formato SOFA, HRTF e strumenti di ricerca",
+      "title_prefix": "SOFAtoolbox"
     }
   ]
 }
