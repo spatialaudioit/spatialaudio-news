@@ -122,9 +122,14 @@ def normalize(item, source, config, now):
     if not u.path.startswith(source.get("article_path_prefix", "/")): raise ValueError("Percorso non autorizzato")
     title = plain(item.get("title"))
     if not title: raise ValueError("Titolo mancante")
+    if any(re.search(p, title, re.I) for p in source.get("exclude_title_patterns", [])): return None
     text = " ".join([title, item.get("search_text", ""), source.get("context", "")])
-    category = next((topic["category"] for topic in config["topics"]
-                     if any(re.search(pattern, text, re.I) for pattern in topic["patterns"])), None)
+    # A topical headline takes precedence over incidental topics in a long release.
+    category = None
+    for candidate in (title, text):
+        category = next((topic["category"] for topic in config["topics"]
+                         if any(re.search(pattern, candidate, re.I) for pattern in topic["patterns"])), None)
+        if category: break
     if not category: return None
     # Prefer a topical excerpt rather than the opening of a mixed-topic press release.
     excerpt = item.get("description") or item.get("search_text", "")
@@ -154,9 +159,11 @@ def merge(previous, incoming):
 def select(records, config, now):
     selected = []; counts = {}
     allowed = {s["id"] for s in config["sources"] if s.get("enabled", True)}
+    sources = {s["id"]: s for s in config["sources"]}
     for record in records:
         sid = record["source_id"]; published = parse_date(record["published_at"])
         if sid not in allowed or not now - timedelta(days=config["max_age_days"]) <= published <= now: continue
+        if any(re.search(p, record["title"], re.I) for p in sources[sid].get("exclude_title_patterns", [])): continue
         if counts.get(sid, 0) >= config["max_items_per_source"]: continue
         selected.append(record); counts[sid] = counts.get(sid, 0) + 1
         if len(selected) >= config["max_items"]: break

@@ -57,6 +57,13 @@ class CollectorTests(unittest.TestCase):
         self.assertEqual(len(c.release_items(json.dumps(data).encode())), 1)
         with self.assertRaises(ValueError): c.rss_items(b'<!DOCTYPE x><rss/>')
 
+    def test_headline_category_precedes_body_and_overviews_are_excluded(self):
+        item = {**self.item, "title": "Dolby Atmos announcement", "search_text": "A panel also covers binaural audio."}
+        self.assertEqual(c.normalize(item, self.source, self.config, self.now)["category"], "Produzione e ascolto immersivo")
+        mpeg = self.config["sources"][1]
+        item = {**self.item, "url": "https://www.mpeg.org/overview", "title": "Introduction to ISO/IEC", "search_text": "MPEG-I immersive audio"}
+        self.assertIsNone(c.normalize(item, mpeg, self.config, self.now))
+
     def test_total_source_failure_preserves_archive_and_reports_stale(self):
         with tempfile.TemporaryDirectory() as directory:
             output = Path(directory)

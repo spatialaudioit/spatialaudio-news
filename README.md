@@ -35,7 +35,7 @@ Una fonte che smette di rispondere non cancella l’archivio. Il collector tenta
 
 ## Pianificazione e avvio manuale
 
-Il workflow `.github/workflows/news.yml` esegue una raccolta al giorno alle **07:17 UTC** (08:17 a Roma in inverno, 09:17 in estate), oltre all’avvio manuale e alle modifiche di configurazione/codice. In GitHub: **Actions → News pilot — raccolta e pubblicazione → Run workflow → main → Run workflow**. Non occorre avviare il computer o Codex.
+Il workflow `.github/workflows/news.yml` esegue una raccolta al giorno alle **08:47 UTC** (09:47 a Roma in inverno, 10:47 in estate), oltre all’avvio manuale e alle modifiche di configurazione/codice. In GitHub: **Actions → News pilot — raccolta e pubblicazione → Run workflow → main → Run workflow**. Non occorre avviare il computer o Codex.
 
 GitHub Pages è configurato con **Settings → Pages → Build and deployment → Source: GitHub Actions**. Il workflow usa runner standard `ubuntu-latest` su repository pubblico; si interrompe se il repository risulta privato. Nessun runner maggiorato, servizio AI, secret commerciale o acquisto. Usa solo il `GITHUB_TOKEN` temporaneo gratuito fornito da Actions. I permessi sono limitati a scrittura dei dati nel job di raccolta e pubblicazione Pages nel job di deploy; il codice del portale non entra in questo repository.
 

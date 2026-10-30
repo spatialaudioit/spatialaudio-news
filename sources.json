@@ -19,6 +19,7 @@
     {
       "id": "mpeg", "name": "MPEG", "type": "rss",
       "url": "https://www.mpeg.org/feed/", "homepage": "https://www.mpeg.org/",
+      "exclude_title_patterns": ["^Introduction to ISO/IEC"],
       "article_hosts": ["www.mpeg.org", "mpeg.org"], "enabled": true,
       "verified_on": "2026-10-30", "verification": "HTTP 200; RSS 2.0 con comunicati ufficiali e date."
     },
