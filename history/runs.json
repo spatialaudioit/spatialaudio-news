@@ -571,5 +571,116 @@
         "latest_entry_at": "2026-08-20T11:28:43Z"
       }
     ]
+  },
+  {
+    "run_id": "2026-10-30T13:17:50Z",
+    "status": "ok",
+    "selected": 20,
+    "archived": 46,
+    "sources": [
+      {
+        "id": "ebu",
+        "name": "EBU Technology & Innovation",
+        "url": "https://tech.ebu.ch/home/news/maincontent/news-list.rss",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://tech.ebu.ch/home/news/maincontent/news-list.rss",
+        "received": 24,
+        "accepted": 1,
+        "rejected": 0,
+        "checked_at": "2026-10-30T13:17:50Z",
+        "latest_entry_at": "2026-10-19T09:39:26Z"
+      },
+      {
+        "id": "fraunhofer",
+        "name": "Fraunhofer IIS Audio Blog",
+        "url": "https://www.audioblog.iis.fraunhofer.com/feed/",
+        "status": "ok",
+        "received": 30,
+        "pages": 3,
+        "accepted": 10,
+        "rejected": 0,
+        "checked_at": "2026-10-30T13:17:50Z",
+        "latest_entry_at": "2026-10-28T08:41:17Z"
+      },
+      {
+        "id": "itu",
+        "name": "ITU-R",
+        "url": "https://www.itu.int/dms_pages/itu-r/rec/bs/R-REC-BS-RSS.xml",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://www.itu.int/dms_pages/itu-r/rec/bs/R-REC-BS-RSS.xml",
+        "received": 50,
+        "accepted": 0,
+        "rejected": 50,
+        "checked_at": "2026-10-30T13:17:50Z",
+        "latest_entry_at": "2023-04-19T14:26:00Z"
+      },
+      {
+        "id": "dolby",
+        "name": "Dolby Professional",
+        "url": "https://news.dolby.com/en-WW/press_releases.atom",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://news.dolby.com/en-WW/press_releases.atom",
+        "received": 20,
+        "accepted": 17,
+        "rejected": 0,
+        "checked_at": "2026-10-30T13:17:50Z",
+        "latest_entry_at": "2026-10-19T04:30:00Z"
+      },
+      {
+        "id": "iem",
+        "name": "IEM Plugin Suite",
+        "url": "https://git.iem.at/audioplugins/IEMPluginSuite/-/tags?format=atom",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://git.iem.at/audioplugins/IEMPluginSuite/-/tags?format=atom",
+        "received": 20,
+        "accepted": 2,
+        "rejected": 18,
+        "checked_at": "2026-10-30T13:17:50Z",
+        "latest_entry_at": "2026-09-30T11:50:58Z"
+      },
+      {
+        "id": "sparta",
+        "name": "SPARTA",
+        "url": "https://api.github.com/repos/leomccormack/SPARTA/releases",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://api.github.com/repos/leomccormack/SPARTA/releases",
+        "received": 11,
+        "accepted": 3,
+        "rejected": 8,
+        "checked_at": "2026-10-30T13:17:50Z",
+        "latest_entry_at": "2026-01-25T16:34:35Z"
+      },
+      {
+        "id": "mpeg",
+        "name": "MPEG",
+        "url": "https://www.mpeg.org/feed/",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://www.mpeg.org/feed/",
+        "received": 10,
+        "accepted": 6,
+        "rejected": 0,
+        "checked_at": "2026-10-30T13:17:50Z",
+        "latest_entry_at": "2026-08-12T05:20:28Z"
+      },
+      {
+        "id": "sofa",
+        "name": "SOFAtoolbox / SOFA Acoustics",
+        "url": "https://api.github.com/repos/sofacoustics/SOFAtoolbox/releases",
+        "status": "ok",
+        "http_status": 200,
+        "endpoint": "https://api.github.com/repos/sofacoustics/SOFAtoolbox/releases",
+        "received": 1,
+        "accepted": 1,
+        "rejected": 0,
+        "checked_at": "2026-10-30T13:17:50Z",
+        "latest_entry_at": "2026-08-20T11:28:43Z"
+      }
+    ]
   }
 ]

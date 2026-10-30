@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "kind": "spatialaudio-news",
-  "run_id": "2026-10-30T09:33:51Z",
-  "checked_at": "2026-10-30T09:33:51Z",
-  "last_success_at": "2026-10-30T09:33:51Z",
-  "status": "partial",
+  "run_id": "2026-10-30T13:17:50Z",
+  "checked_at": "2026-10-30T13:17:50Z",
+  "last_success_at": "2026-10-30T13:17:50Z",
+  "status": "ok",
   "max_items": 20,
-  "total_archived": 29,
+  "total_archived": 46,
   "policy": {
     "max_age_days": 730,
     "max_items_per_source": 8,
@@ -23,7 +23,7 @@
       "received": 24,
       "accepted": 1,
       "rejected": 0,
-      "checked_at": "2026-10-30T09:33:51Z",
+      "checked_at": "2026-10-30T13:17:50Z",
       "latest_entry_at": "2026-10-19T09:39:26Z"
     },
     {
@@ -35,7 +35,7 @@
       "pages": 3,
       "accepted": 10,
       "rejected": 0,
-      "checked_at": "2026-10-30T09:33:51Z",
+      "checked_at": "2026-10-30T13:17:50Z",
       "latest_entry_at": "2026-10-28T08:41:17Z"
     },
     {
@@ -48,20 +48,21 @@
       "received": 50,
       "accepted": 0,
       "rejected": 50,
-      "checked_at": "2026-10-30T09:33:51Z",
+      "checked_at": "2026-10-30T13:17:50Z",
       "latest_entry_at": "2023-04-19T14:26:00Z"
     },
     {
       "id": "dolby",
       "name": "Dolby Professional",
       "url": "https://news.dolby.com/en-WW/press_releases.atom",
-      "status": "error",
-      "error": "curl exit 60: curl: (60) SSL certificate OpenSSL verify result: unable to get local issuer certificate (20)\nMore details here: https://curl.se/docs/sslcerts.html\n\ncurl failed to verify the legit",
-      "received": 0,
-      "accepted": 0,
+      "status": "ok",
+      "http_status": 200,
+      "endpoint": "https://news.dolby.com/en-WW/press_releases.atom",
+      "received": 20,
+      "accepted": 17,
       "rejected": 0,
-      "checked_at": "2026-10-30T09:33:51Z",
-      "latest_entry_at": null
+      "checked_at": "2026-10-30T13:17:50Z",
+      "latest_entry_at": "2026-10-19T04:30:00Z"
     },
     {
       "id": "iem",
@@ -73,7 +74,7 @@
       "received": 20,
       "accepted": 2,
       "rejected": 18,
-      "checked_at": "2026-10-30T09:33:51Z",
+      "checked_at": "2026-10-30T13:17:50Z",
       "latest_entry_at": "2026-09-30T11:50:58Z"
     },
     {
@@ -86,7 +87,7 @@
       "received": 11,
       "accepted": 3,
       "rejected": 8,
-      "checked_at": "2026-10-30T09:33:51Z",
+      "checked_at": "2026-10-30T13:17:50Z",
       "latest_entry_at": "2026-01-25T16:34:35Z"
     },
     {
@@ -99,7 +100,7 @@
       "received": 10,
       "accepted": 6,
       "rejected": 0,
-      "checked_at": "2026-10-30T09:33:51Z",
+      "checked_at": "2026-10-30T13:17:50Z",
       "latest_entry_at": "2026-08-12T05:20:28Z"
     },
     {
@@ -112,11 +113,25 @@
       "received": 1,
       "accepted": 1,
       "rejected": 0,
-      "checked_at": "2026-10-30T09:33:51Z",
+      "checked_at": "2026-10-30T13:17:50Z",
       "latest_entry_at": "2026-08-20T11:28:43Z"
     }
   ],
   "items": [
+    {
+      "id": "b2677642bbd28154a3b2",
+      "title": "Dolby Cinema Expands Its India Footprint with Keralam Debut at EVM Cinemas in Kochi",
+      "url": "https://news.dolby.com/en-WW/273443-dolby-cinema-expands-its-india-footprint-with-keralam-debut-at-evm-cinemas-in-kochi",
+      "published_at": "2026-10-19T04:30:00Z",
+      "source_id": "dolby",
+      "source": "Dolby Professional",
+      "category": "Produzione e ascolto immersivo",
+      "description": "The 450-seater Dolby Cinema auditorium opens to the public soon, with the release of several anticipated movies in Dolby Vision and Dolby Atmos .",
+      "description_kind": "source_excerpt",
+      "date_kind": "published",
+      "first_seen_at": "2026-10-30T13:17:50Z",
+      "last_seen_at": "2026-10-30T13:17:50Z"
+    },
     {
       "id": "290956ab8a3d5bc5a2d4",
       "title": "2026 Technology & Engineering Emmy® Award for ATSC 3.0",
@@ -129,7 +144,21 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
+    },
+    {
+      "id": "0d485b69bc0ce69e5d8a",
+      "title": "Formula 1® on Apple TV to Debut in Dolby Atmos, Alongside Dolby Vision, Delivering a More Immersive Race Experience",
+      "url": "https://news.dolby.com/en-WW/272997-formula-1-on-apple-tv-to-debut-in-dolby-atmos-alongside-dolby-vision-delivering-a-more-immersive-race-experience",
+      "published_at": "2026-10-07T13:00:00Z",
+      "source_id": "dolby",
+      "source": "Dolby Professional",
+      "category": "Produzione e ascolto immersivo",
+      "description": "with an Apple TV subscription will be able to experience every Formula 1 race weekend in both Dolby Vision and Dolby Atmos.",
+      "description_kind": "source_excerpt",
+      "date_kind": "published",
+      "first_seen_at": "2026-10-30T13:17:50Z",
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "b31cfaffd6fd66834664",
@@ -143,7 +172,35 @@
       "description_kind": "source_excerpt",
       "date_kind": "updated",
       "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
+    },
+    {
+      "id": "b035a97a101d1ff5e62d",
+      "title": "Dolby and Meta Expand Dolby Atmos and Dolby Vision Across Meta's Ecosystem",
+      "url": "https://news.dolby.com/en-WW/272004-dolby-and-meta-expand-dolby-atmos-and-dolby-vision-across-meta-s-ecosystem",
+      "published_at": "2026-09-24T00:00:00Z",
+      "source_id": "dolby",
+      "source": "Dolby Professional",
+      "category": "Produzione e ascolto immersivo",
+      "description": "Across Meta AI glasses, Instagram, and VR devices, Dolby Atmos and Dolby Vision bring greater depth, authenticity, and emotion to the experiences that matter…",
+      "description_kind": "source_excerpt",
+      "date_kind": "published",
+      "first_seen_at": "2026-10-30T13:17:50Z",
+      "last_seen_at": "2026-10-30T13:17:50Z"
+    },
+    {
+      "id": "847b7941455079a0dee1",
+      "title": "Cinema Sunshine Becomes Japan’s First Exhibitor to Adopt Dolby Vision+Atmos Theatrical Solution",
+      "url": "https://news.dolby.com/en-WW/270400-cinema-sunshine-becomes-japan-s-first-exhibitor-to-adopt-dolby-vision-atmos-theatrical-solution",
+      "published_at": "2026-09-10T05:35:29Z",
+      "source_id": "dolby",
+      "source": "Dolby Professional",
+      "category": "Produzione e ascolto immersivo",
+      "description": "Delivering Dolby’s immersive audiovisual experiences in a brand-new way at Cinema Sunshine’s proprietary BESTIA auditorium at the Misato location.",
+      "description_kind": "source_excerpt",
+      "date_kind": "published",
+      "first_seen_at": "2026-10-30T13:17:50Z",
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "9ea1e54f06b1b53700c9",
@@ -157,7 +214,21 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
+    },
+    {
+      "id": "85c0fd17dec72ff1c17b",
+      "title": "Dolby Laboratories Announces Leadership Transition",
+      "url": "https://news.dolby.com/en-WW/269719-dolby-laboratories-announces-leadership-transition",
+      "published_at": "2026-08-27T13:00:00Z",
+      "source_id": "dolby",
+      "source": "Dolby Professional",
+      "category": "Formati e standard",
+      "description": "By continuously bringing new innovations to life, he significantly expanded the company and led the era of immersive audio and visual experiences.” “I’m deeply…",
+      "description_kind": "source_excerpt",
+      "date_kind": "published",
+      "first_seen_at": "2026-10-30T13:17:50Z",
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "f7c5c3ce748dfa7d1b70",
@@ -171,7 +242,7 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "06b11ec1c164e1d52d3f",
@@ -185,7 +256,7 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "07723fe8805baeaf4de1",
@@ -199,7 +270,7 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "1ce5226b24c10b641ba9",
@@ -213,7 +284,7 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T09:24:54Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "e385f1696cbb4d85dc1e",
@@ -227,7 +298,35 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T09:24:54Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
+    },
+    {
+      "id": "1cc1fbe89d0692e71bbd",
+      "title": "Dolby and MagentaTV Bring Fans Closer to the FIFA World Cup 2026™ in Germany with Dolby Vision and Dolby Atmos",
+      "url": "https://news.dolby.com/en-WW/266750-dolby-and-magentatv-bring-fans-closer-to-the-fifa-world-cup-2026-in-germany-with-dolby-vision-and-dolby-atmos",
+      "published_at": "2026-06-10T06:00:00Z",
+      "source_id": "dolby",
+      "source": "Dolby Professional",
+      "category": "Produzione e ascolto immersivo",
+      "description": "Dolby and MagentaTV Bring Fans Closer to the FIFA World Cup 2026™ in Germany with Dolby Vision and Dolby Atmos Deutsche Telekom’s MagentaTV to…",
+      "description_kind": "source_excerpt",
+      "date_kind": "published",
+      "first_seen_at": "2026-10-30T13:17:50Z",
+      "last_seen_at": "2026-10-30T13:17:50Z"
+    },
+    {
+      "id": "e5fd221d94d360d9acd6",
+      "title": "Dolby Vision and Dolby Atmos to Power Telemundo’s FIFA World Cup ™ 2026 Coverage on Peacock, a Streaming First",
+      "url": "https://news.dolby.com/en-WW/266633-dolby-vision-and-dolby-atmos-to-power-telemundo-s-fifa-world-cup-2026-coverage-on-peacock-a-streaming-first",
+      "published_at": "2026-06-05T14:00:00Z",
+      "source_id": "dolby",
+      "source": "Dolby Professional",
+      "category": "Produzione e ascolto immersivo",
+      "description": "Telemundo’s live Spanish-language coverage will stream in Dolby Vision and Dolby Atmos with Dolby AC-4, marking an expansion of immersive live sports experiences on…",
+      "description_kind": "source_excerpt",
+      "date_kind": "published",
+      "first_seen_at": "2026-10-30T13:17:50Z",
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "14cd363c948af1128685",
@@ -241,7 +340,21 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
+    },
+    {
+      "id": "d274e39711f36967a8a6",
+      "title": "Dolby and rednote Bring More Immersive Storytelling to Video Content with Dolby Atmos",
+      "url": "https://news.dolby.com/en-WW/266238-dolby-and-rednote-bring-more-immersive-storytelling-to-video-content-with-dolby-atmos",
+      "published_at": "2026-05-29T16:00:00Z",
+      "source_id": "dolby",
+      "source": "Dolby Professional",
+      "category": "Produzione e ascolto immersivo",
+      "description": "The Addition of Dolby Atmos Builds on Dolby Vision to Help Creators Share Video Content That Feels More Authentic, Immersive, and True to Life…",
+      "description_kind": "source_excerpt",
+      "date_kind": "published",
+      "first_seen_at": "2026-10-30T13:17:50Z",
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "ca1039396a5bc40dd97d",
@@ -255,7 +368,7 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "a1ce1dd492f5fb9e7aca",
@@ -269,7 +382,7 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T09:24:54Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
     },
     {
       "id": "bbd6f1f1c04a913426b5",
@@ -283,119 +396,7 @@
       "description_kind": "source_excerpt",
       "date_kind": "published",
       "first_seen_at": "2026-10-30T09:24:54Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
-    },
-    {
-      "id": "2723d7294a40864acc39",
-      "title": "153rd meeting of MPEG",
-      "url": "https://www.mpeg.org/153rd-meeting-of-mpeg",
-      "published_at": "2026-03-02T13:48:17Z",
-      "source_id": "mpeg",
-      "source": "MPEG",
-      "category": "Formati e standard",
-      "description": "Considering the importance of the availability of open-source implementations of the standard, which enables developers to easily test and integrate the technology into their…",
-      "description_kind": "source_excerpt",
-      "date_kind": "published",
-      "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
-    },
-    {
-      "id": "0dbc252d0dd7fdab659d",
-      "title": "SPARTA — v1.8.2",
-      "url": "https://github.com/leomccormack/SPARTA/releases/tag/v1.8.2",
-      "published_at": "2026-01-25T16:34:35Z",
-      "source_id": "sparta",
-      "source": "SPARTA",
-      "category": "Ambisonics e binaurale",
-      "description": "* **MacOS** (12.0+, ARM & x86-64) - [Download Link](https://github.com/leomccormack/SPARTA/releases/download/v1.8.2/MacOS_SPARTA_AAX_2026_01_25_v1.8.2-signed.pkg) If you would like to learn more about the plug-ins included in the SPARTA installer,…",
-      "description_kind": "source_excerpt",
-      "date_kind": "published",
-      "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
-    },
-    {
-      "id": "aaa3f97b498c71e36662",
-      "title": "MPEG Systems Wins an Emmy® for CMAF",
-      "url": "https://www.mpeg.org/mpeg-systems-wins-an-emmy-for-cmaf",
-      "published_at": "2025-10-22T12:37:20Z",
-      "source_id": "mpeg",
-      "source": "MPEG",
-      "category": "Formati e standard",
-      "description": "Overall, MPEG has previously received six Technology & Engineering Emmy® Awards from the National Academy of Television Arts & Sciences (NATAS), and among them…",
-      "description_kind": "source_excerpt",
-      "date_kind": "published",
-      "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
-    },
-    {
-      "id": "3bd7c43047f0c563c48c",
-      "title": "SPARTA — v1.8.1",
-      "url": "https://github.com/leomccormack/SPARTA/releases/tag/v1.8.1",
-      "published_at": "2025-10-04T19:24:39Z",
-      "source_id": "sparta",
-      "source": "SPARTA",
-      "category": "Ambisonics e binaurale",
-      "description": "**Please note** that if you are upgrading from v1.7.1 (or an earlier version), then it is possible that some existing parameter settings, automation data,…",
-      "description_kind": "source_excerpt",
-      "date_kind": "published",
-      "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
-    },
-    {
-      "id": "cd1477697705eae2a8c5",
-      "title": "151st meeting of MPEG",
-      "url": "https://www.mpeg.org/151th-meeting-of-mpeg",
-      "published_at": "2025-07-23T12:45:55Z",
-      "source_id": "mpeg",
-      "source": "MPEG",
-      "category": "Formati e standard",
-      "description": "MPEG Audio Media Authenticity At its 150th and 151st meeting, MPEG Audio Coding (WG 6) advanced Amendments of ISO/IEC 14496-3 (MPEG-4 Audio), ISO/IEC 23003-3…",
-      "description_kind": "source_excerpt",
-      "date_kind": "published",
-      "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
-    },
-    {
-      "id": "25481694989d84228d55",
-      "title": "SPARTA — v1.8.0 (beta)",
-      "url": "https://github.com/leomccormack/SPARTA/releases/tag/v1.8.0",
-      "published_at": "2025-07-13T14:57:11Z",
-      "source_id": "sparta",
-      "source": "SPARTA",
-      "category": "Ambisonics e binaurale",
-      "description": "**Please note** this is a beta release, which includes a rework of how parameters are handled (replacing old deprecated code, with modern JUCE recommendations).…",
-      "description_kind": "source_excerpt",
-      "date_kind": "published",
-      "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
-    },
-    {
-      "id": "4ed7226a1b82ce45670f",
-      "title": "150th meeting of MPEG",
-      "url": "https://www.mpeg.org/150th-meeting-of-mpeg",
-      "published_at": "2025-06-26T09:09:45Z",
-      "source_id": "mpeg",
-      "source": "MPEG",
-      "category": "Ambisonics e binaurale",
-      "description": "At its 150th meeting, MPEG promoted three standards (among others) to Final Draft International Standard (FDIS), driving innovation in immersive audio and video coding:…",
-      "description_kind": "source_excerpt",
-      "date_kind": "published",
-      "first_seen_at": "2026-10-30T08:35:43Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
-    },
-    {
-      "id": "769865a74fe17d450a07",
-      "title": "IEM Plugin Suite — v1.15.0",
-      "url": "https://git.iem.at/audioplugins/IEMPluginSuite/-/tags/v1.15.0",
-      "published_at": "2025-04-10T10:43:21Z",
-      "source_id": "iem",
-      "source": "IEM Plugin Suite",
-      "category": "Ambisonics e binaurale",
-      "description": "Included plug-ins AllRA Decoder v0.9.5 Binaural Decoder v0.6.6 Coordinate Converter v0.4.6 Directional Compressor v1.3.6 Directivity Shaper v0.8.6 Distance Compensator v0.3.6 Dual Delay v1.0.0 Energy…",
-      "description_kind": "source_excerpt",
-      "date_kind": "updated",
-      "first_seen_at": "2026-10-30T08:58:03Z",
-      "last_seen_at": "2026-10-30T09:33:51Z"
+      "last_seen_at": "2026-10-30T13:17:50Z"
     }
   ],
   "source_catalog": [
@@ -455,9 +456,9 @@
       "topics": "Dolby Atmos, produzione immersiva e strumenti",
       "enabled": true,
       "note": "",
-      "status": "error",
-      "accepted": 0,
-      "latest_entry_at": null
+      "status": "ok",
+      "accepted": 17,
+      "latest_entry_at": "2026-10-19T04:30:00Z"
     },
     {
       "id": "iem",
