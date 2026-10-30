@@ -1,4 +1,4 @@
-name: News pilot — raccolta e pubblicazione
+name: News — raccolta e pubblicazione
 on:
   schedule:
     - cron: '47 8 * * *'
@@ -9,7 +9,7 @@ on:
 
 permissions: {}
 concurrency:
-  group: news-pilot
+  group: news
   cancel-in-progress: false
 
 jobs:
@@ -27,15 +27,16 @@ jobs:
         run: |
           test "$IS_PRIVATE" = "false"
           python3 -m unittest -v test_collect
-      - name: Raccogli da tre fonti pubbliche
+      - name: Raccogli dalle fonti pubbliche
         run: python3 collect.py
       - name: Conserva dati e cronologia nel repository
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add public/news-pilot.json history/
+          python3 -c "from pathlib import Path; Path('public/news-pilot.json').unlink(missing_ok=True)"
+          git add -A public/ history/
           if ! git diff --cached --quiet; then
-            git commit -m 'Aggiorna rassegna pilota e registro delle fonti'
+            git commit -m 'Aggiorna rassegna e registro delle fonti'
             git push
           fi
       - name: Prepara archivio GitHub Pages
@@ -63,7 +64,7 @@ jobs:
         run: |
           python3 - <<'PY'
           import json, os, time, urllib.request
-          url = os.environ['PAGE_URL'].rstrip('/') + '/news-pilot.json?verify=' + str(time.time_ns())
+          url = os.environ['PAGE_URL'].rstrip('/') + '/news.json?verify=' + str(time.time_ns())
           with urllib.request.urlopen(url, timeout=30) as r:
               data = json.load(r)
           print('Esecuzione pubblicata:', data['run_id'], 'stato:', data['status'])
